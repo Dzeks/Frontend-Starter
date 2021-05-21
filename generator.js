@@ -23,10 +23,10 @@ module.exports = () => {
         product.description = faker.commerce.productDescription();
         product.defaultImage = faker.image.cats();
         product.images = [
-            faker.image.cats(),
-            faker.image.cats(),
-            faker.image.cats(),
-            faker.image.cats()
+            faker.image.cats(400, 400, true),
+            faker.image.cats(400, 400, true),
+            faker.image.cats(400, 400, true),
+            faker.image.cats(400, 400, true)
         ];
         product.price = faker.random.float();
         product.discount = faker.random.number(70);
@@ -78,12 +78,12 @@ module.exports = () => {
         // Set random products into the user's cart
         const cart = [];
         for(let y = 1; y <= faker.random.number(5); y++) {
-            const product = data.products[faker.random.number({min: 0, max: amountOfProducts - 1})]; 
+            const product = data.products[faker.random.number({min: 0, max: amountOfProducts - 1})];
             cart.push({id: product.id, quantity: faker.random.number({min: 1, max: 10})});
         }
         data.carts.push({id: user.id, products: cart});
 
-        
+
         data.users.push(user);
     }
 
