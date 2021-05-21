@@ -1,0 +1,5 @@
+<app-product-list
+  (addItem)="cartComponent.addItem($event)"
+  class="content"
+></app-product-list>
+<app-shopping-cart #cartComponent class="sidebar"></app-shopping-cart>

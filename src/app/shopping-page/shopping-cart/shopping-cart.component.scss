@@ -1,0 +1,30 @@
+@use 'sass:map';
+@use '~@angular/material' as mat;
+@use 'variables' as vars;
+
+$color-config: mat.get-color-config(vars.$my-theme);
+
+mat-card-actions {
+  text-align: right;
+}
+mat-list {
+  mat-icon {
+    cursor: pointer;
+    transition: opacity 0.3s linear;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.total {
+  text-align: right;
+  margin-top: 15px;
+}
+:host .mat-line {
+  display: flex;
+  align-items: center;
+  .close, .price {
+    margin-left: auto;
+  }
+}

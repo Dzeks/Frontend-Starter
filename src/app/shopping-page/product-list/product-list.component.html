@@ -1,0 +1,16 @@
+<mat-form-field class="search-field">
+  <mat-label>Filter products</mat-label>
+  <form action="" [formGroup]="searchForm">
+    <input matInput type="text" formControlName="q" />
+  </form>
+</mat-form-field>
+
+<div class="container">
+  <app-product-list-item
+    class="list-item"
+    *ngFor="let _item of items; trackBy: trackByFn"
+    [product]="_item"
+    (addItem)="addItem.emit($event)"
+  ></app-product-list-item>
+  <div *ngIf="showEmptySearchMessage">No items found</div>
+</div>

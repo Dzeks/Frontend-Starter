@@ -1,0 +1,33 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Shopping cart</mat-card-title>
+    <mat-card-subtitle>Start adding items to your cart.</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let _item of items; last as isLast; index as i"c>
+        <img mat-list-avatar [src]="_item.images[0]" alt="">
+        <span mat-line>
+          {{ _item.name }}
+          <mat-icon class="close" (click)="removeItem(i)">close</mat-icon>
+        </span>
+        <div mat-line>
+          <mat-icon (click)="decrement(i)">remove</mat-icon>
+          {{ _item.amount }}
+          <mat-icon (click)="increment(i)">add</mat-icon>
+          <div class="price">{{ _item.totalPrice | currency: "NOK" }}</div>
+        </div>
+        <mat-divider [inset]="true"></mat-divider>
+      </mat-list-item>
+    </mat-list>
+    <div *ngIf="items.length" class="total">Total: <b>{{ total | currency: "NOK" }}</b></div>
+  </mat-card-content>
+  <mat-card-actions *ngIf="items.length">
+    <button mat-raised-button color="primary">
+      Checkout
+      <mat-icon aria-hidden="false" aria-label="Checkout"
+      >credit_card</mat-icon
+      >
+    </button>
+  </mat-card-actions>
+</mat-card>

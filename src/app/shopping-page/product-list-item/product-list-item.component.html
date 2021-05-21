@@ -1,0 +1,15 @@
+<mat-card class="card" >
+  <mat-card-title>{{ product.name }}</mat-card-title>
+  <img height="250" width="250" mat-card-image [src]="product.images[0]" />
+  <mat-card-content>
+    <p>{{ product.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="addItem.emit(product)">
+      Add to card
+      <mat-icon aria-hidden="false" aria-label="Add to cart"
+      >shopping_cart</mat-icon
+      >
+    </button>
+  </mat-card-actions>
+</mat-card>

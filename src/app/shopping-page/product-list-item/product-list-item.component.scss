@@ -1,0 +1,11 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+}
+mat-card-actions {
+  display: flex;
+  margin-top: auto;
+}
+.amount {
+  width: 50px;
+}

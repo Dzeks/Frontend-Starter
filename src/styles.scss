@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@use '~@angular/material' as mat;
+@use "variables" as vars;
+
+
+@include mat.core(vars.$my-custom-typography);
+@include mat.strong-focus-indicators((
+  border-style: dotted,
+  border-width: 4px,
+  border-radius: 2px,
+));
+
+@include mat.all-component-themes(vars.$my-theme);
+@include mat.button-theme(vars.$my-theme);
