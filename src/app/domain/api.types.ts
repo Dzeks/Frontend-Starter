@@ -6,7 +6,7 @@ export type ProductDto = {
   images: string[];
   price: number;
   discount: number;
-}
+};
 
 export type UserDto = {
   id: number;
@@ -30,7 +30,7 @@ export type UserDto = {
       quantity: number;
     }[];
   };
-  role: 'ADMIN' | 'CUSTOMER'; // Role is based on i % 2
+  role: "ADMIN" | "CUSTOMER"; // Role is based on i % 2
 };
 
 export type CartDto = {
@@ -42,7 +42,7 @@ export type CartDto = {
 };
 
 export type ProductFilterDto = {
-  q: string;
   _page: number;
   _limit: number;
-}
+  q?: string;
+};

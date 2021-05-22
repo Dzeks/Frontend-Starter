@@ -1,8 +1,32 @@
+@use 'sass:map';
+@use '~@angular/material' as mat;
+@use "variables" as vars;
+
+$color-config: mat.get-color-config(vars.$my-primary);
+$accent-color: mat.get-color-config(vars.$my-accent);
+
 :host {
+  padding: 30px;
   max-width: 1280px;
   margin: auto;
+  display: block;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 100;
+  color: map.get($color-config, 500);
+}
+.content-container {
   display: flex;
-  padding: 30px;
+}
+.here-comes-the-banner {
+  background-color: map.get($color-config, 500);
+  color: white;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: 100;
 }
 .content {
   width: 70%;
