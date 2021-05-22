@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ApiService } from "../domain/api.service";
 
 @Component({
   selector: "app-admin-page",

@@ -33,6 +33,6 @@
   <mat-card-actions *ngIf="selection.selected.length">
     Bulk actions: {{ selection.selected.length }}
     <button mat-button (click)="onRemoveAll()">Delete all</button>
-    <button mat-button (click)="list.deselectAll()">Clear selection</button>
+    <button mat-button (click)="selection.clear()">Clear selection</button>
   </mat-card-actions>
 </mat-card>

@@ -38,6 +38,7 @@ export class ProductListComponent implements OnInit {
   }
   onEdit($event: MouseEvent) {
     $event.stopPropagation();
+    // Open edit product modal
   }
   onRemoveAll() {
     this.apiService
