@@ -1,2 +1,10 @@
-<span (click)="editProduct($event)"></span>
-<ng-template #overlayTpl></ng-template>
+<span (click)="editProduct()">Create product</span>
+<ng-template #overlayTpl>
+    <h1 mat-dialog-title></h1>
+    <mat-dialog-content>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-raised-button (click)="create()">Create product</button>
+    </mat-dialog-actions>
+</ng-template>

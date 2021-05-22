@@ -10,13 +10,12 @@ export class ProductOverlayComponent implements OnInit {
   @ViewChild("overlayTpl", { static: false }) overlayTpl!: TemplateRef<any>;
   private dialogRef?: MatDialogRef<unknown, any>;
   constructor(private dialog: MatDialog) {}
-
   ngOnInit(): void {}
-
-  editProduct($event: MouseEvent) {
+  editProduct() {
     this.dialogRef = this.dialog.open(this.overlayTpl, {
-      width: "250px",
+      width: "500px",
       data: {},
     });
   }
+  create() {}
 }
