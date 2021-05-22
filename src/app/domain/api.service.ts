@@ -30,7 +30,7 @@ export class ApiService {
       })
       .toPromise();
   }
-  getUser(userId: number) {
+  getUser(userId: number): Promise<UserDto> {
     return this.http
       .get<UserDto>(`http://localhost:8080/users/${userId}`)
       .toPromise();
