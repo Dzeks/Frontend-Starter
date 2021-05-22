@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use '~@angular/material' as mat;
+@use "variables" as vars;
+
+$color-config: mat.get-color-config(vars.$my-primary);
+$accent-color: mat.get-color-config(vars.$my-accent);
+
+:host .title {
+  display: flex;
+  align-items: center;
+}
+.text-right {
+  text-align: right;
+}
+.viewport {
+  height: 400px;
+}
+.actions {
+  margin-left: auto;
+  mat-icon {
+    opacity: 0.5;
+    transition: opacity 0.3s linear;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

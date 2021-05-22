@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Products</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="text-right"><mat-checkbox labelPosition="before" (change)="onSelectAll($event)">Select All</mat-checkbox></p>
+    <mat-selection-list #list (selectionChange)="onSelectionChange($event)">
+      <cdk-virtual-scroll-viewport [itemSize]="56" class="viewport">
+        <mat-list-option
+          *cdkVirtualFor="
+            let _item of items;
+            let index = index;
+            templateCacheSize: 0;
+            trackBy: trackByFn
+          "
+          [value]="_item.id"
+          [selected]="selection.isSelected(_item.id)"
+        >
+          <img mat-list-avatar [src]="_item.images[0]" />
+          <span mat-line class="title">
+            {{ _item.name }}
+            <span class="actions">
+              <mat-icon (click)="onEdit($event)">edit</mat-icon>
+              <mat-icon (click)="onRemove($event, index, _item)"
+                >delete</mat-icon
+              >
+            </span>
+          </span>
+        </mat-list-option>
+      </cdk-virtual-scroll-viewport>
+    </mat-selection-list>
+  </mat-card-content>
+  <mat-card-actions *ngIf="selection.selected.length">
+    Bulk actions: {{ selection.selected.length }}
+    <button mat-button (click)="onRemoveAll()">Delete all</button>
+    <button mat-button (click)="list.deselectAll()">Clear selection</button>
+  </mat-card-actions>
+</mat-card>
